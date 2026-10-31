@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Construction Business OS",
+  "short_name": "Construction OS",
+  "description": "Trung tâm điều hành dành cho doanh nghiệp xây dựng.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#061524",
+  "theme_color": "#061524",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='42' fill='%23061524'/%3E%3Cpath d='M42 142V76l54-30 54 30v66h-35V103H77v39H42Z' fill='%23ffc845'/%3E%3Cpath d='M58 134h14v-28h16v28h16V90L81 77 58 90v44Z' fill='%2319daa4'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

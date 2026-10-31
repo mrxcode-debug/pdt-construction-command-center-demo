@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#061524" />
+  <meta name="description" content="Construction Business OS - AI command center for construction operators." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Construction OS" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>PDT Construction Command Center | Demo</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="public-demo-stamp" role="note">INTERNAL DEMO - SYNTHETIC DATA</div>
+  <div class="os-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div>
+          <strong>CONSTRUCTION<br>BUSINESS OS</strong>
+          <small>SIMPLE · SMART · BUILT FOR REAL WORK</small>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Điều hướng">
+        <button class="nav-item active" data-route="dashboard" title="Tổng quan"><i>⌂</i><span>Tổng quan</span></button>
+        <button class="nav-item" data-route="projects" title="Công trình"><i>▦</i><span>Công trình</span></button>
+        <button class="nav-item" data-route="customers" title="Khách hàng"><i>◎</i><span>Khách hàng</span></button>
+        <button class="nav-item" data-route="quotes" title="Báo giá"><i>▤</i><span>Báo giá</span></button>
+        <button class="nav-item" data-route="contracts" title="Hợp đồng"><i>□</i><span>Hợp đồng</span></button>
+        <button class="nav-item" data-route="costs" title="Chi phí"><i>₫</i><span>Chi phí</span></button>
+        <button class="nav-item" data-route="finance" title="Hóa đơn & Thu chi"><i>▣</i><span>Hóa đơn & Thu chi</span></button>
+        <button class="nav-item" data-route="schedule" title="Lịch công việc"><i>▧</i><span>Lịch công việc</span></button>
+        <button class="nav-item" data-route="team" title="Nhân sự"><i>◇</i><span>Nhân sự</span></button>
+        <button class="nav-item" data-route="documents" title="Tài liệu & Ảnh"><i>▱</i><span>Tài liệu & Ảnh</span></button>
+        <button class="nav-item" data-route="reports" title="Báo cáo"><i>▥</i><span>Báo cáo</span></button>
+        <button class="nav-item" data-route="ai" title="AI Copilot"><i>✦</i><span>AI Copilot</span><b>Mới</b></button>
+        <button class="nav-item" data-route="settings" title="Cài đặt"><i>⚙</i><span>Cài đặt</span></button>
+      </nav>
+
+      <div class="sidebar-card">
+        <div class="profile">
+          <span class="avatar photo"></span>
+          <div>
+            <strong>PDT Construction</strong>
+            <small>Owner</small>
+          </div>
+          <i>⌄</i>
+        </div>
+        <blockquote>
+          "Công trình hôm nay là giá trị cho ngày mai."
+          <cite>PDT LABS</cite>
+        </blockquote>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuButton" aria-label="Mở menu">☰</button>
+        <button class="search" id="openCommand" aria-label="Tìm nhanh">
+          <i>⌕</i>
+          <span>Tìm công trình, khách hàng, hóa đơn...</span>
+          <kbd>⌘ K</kbd>
+        </button>
+        <button class="icon-button bell" id="openNotifications" aria-label="Thông báo"><span>3</span>♢</button>
+        <button class="account">
+          <span class="avatar photo"></span>
+          <span><strong>Xin chào, Owner</strong><small>PDT Construction</small></span>
+          <i>⌄</i>
+        </button>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1 id="heroTitle">Chào buổi sáng, Owner!</h1>
+          <p id="heroSubtitle">Đây là tình hình doanh nghiệp của bạn hôm nay.</p>
+        </div>
+        <div class="weather-card">
+          <strong>Chủ Nhật, 14/09/2026</strong>
+          <span>⌖ Lâm Đồng, Việt Nam</span>
+          <b>☀ 24°C</b>
+          <small>Trời nắng đẹp</small>
+        </div>
+      </section>
+
+      <div class="view-switcher">
+        <button id="moneyViewToggle" type="button" aria-pressed="false">Money view</button>
+        <span id="viewHint">Bật khi cần trình bày bằng tài chính cho owner/đối tác.</span>
+      </div>
+
+      <section class="executive-strip" id="executiveStrip" aria-label="Tóm tắt tài chính điều hành" hidden>
+        <article>
+          <span>Cash in bank</span>
+          <strong>2,46 tỷ</strong>
+          <small>An toàn 42 ngày vận hành</small>
+        </article>
+        <article>
+          <span>Gross profit forecast</span>
+          <strong>3,2 tỷ</strong>
+          <small>28,4% biên dự kiến</small>
+        </article>
+        <article>
+          <span>Receivable at risk</span>
+          <strong>620 triệu</strong>
+          <small>2 khách quá hạn cần xử lý</small>
+        </article>
+        <article>
+          <span>Contract backlog</span>
+          <strong>19,4 tỷ</strong>
+          <small>6 công trình đang tạo tiền</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid" id="dashboardView">
+        <article class="panel health-panel">
+          <div class="panel-head">
+            <h2>BUSINESS HEALTH</h2>
+            <button class="small-action" id="analyzeHealth">✦ AI Phân tích</button>
+          </div>
+          <div class="health-body">
+            <div class="gauge" id="healthGauge" style="--score:82">
+              <span>82</span>
+              <small>/ 100</small>
+              <b>Hoạt động tốt</b>
+            </div>
+            <p id="healthBrief">"Mọi thứ đang đi đúng hướng. Tập trung xử lý 2 việc quan trọng để duy trì đà tăng trưởng."</p>
+          </div>
+        </article>
+
+        <article class="panel brief-panel">
+          <div class="panel-head">
+            <h2>BOSS BRIEF</h2>
+            <button class="link-button" data-route="ai">Xem chi tiết →</button>
+          </div>
+          <ul class="brief-list" id="bossBriefList">
+            <li><b class="red">2</b><span>việc cần xử lý ngay</span></li>
+            <li><b class="yellow">4</b><span>việc cần theo dõi</span></li>
+            <li><b class="green">3</b><span>cơ hội đáng chú ý</span></li>
+          </ul>
+        </article>
+
+        <article class="quote-card">
+          <div id="snapshotCard">
+            <p>Xây dựng không chỉ là công trình, mà là giá trị bền vững cho tương lai.</p>
+            <small>© PDT LABS</small>
+          </div>
+        </article>
+
+        <article class="metric-card" data-metric-index="0">
+          <span>Doanh thu tháng này</span>
+          <strong>1,86 tỷ</strong>
+          <b class="up">↑ 12%</b>
+          <i class="metric-icon bars"></i>
+        </article>
+        <article class="metric-card" data-metric-index="1">
+          <span>Đã thu</span>
+          <strong>1,24 tỷ</strong>
+          <b class="up">↑ 18%</b>
+          <i class="metric-icon wallet"></i>
+        </article>
+        <article class="metric-card" data-metric-index="2">
+          <span>Còn phải thu</span>
+          <strong>620 triệu</strong>
+          <b class="down">↓ 5%</b>
+          <i class="metric-icon clock"></i>
+        </article>
+        <article class="metric-card" data-metric-index="3">
+          <span>Tổng công trình</span>
+          <strong>12</strong>
+          <b>6 đang thi công</b>
+          <i class="metric-icon building"></i>
+        </article>
+
+        <article class="panel cash-panel">
+          <div class="panel-head">
+            <h2 id="cashPanelTitle">Dòng tiền (6 tháng)</h2>
+            <div class="legend" id="cashLegend"><span class="dot green"></span>Thu <span class="dot blue"></span>Chi</div>
+          </div>
+          <div class="cash-summary" id="cashSummary" hidden>
+            <div><small>Net cash tháng này</small><strong>+380 triệu</strong></div>
+            <div><small>Chi phí/ngày</small><strong>42 triệu</strong></div>
+          </div>
+          <div class="cash-chart">
+            <span>3.0B</span><span>2.0B</span><span>1.0B</span><span>0</span>
+            <div class="month"><i class="income h45"></i><i class="expense h18"></i><b>T4</b></div>
+            <div class="month"><i class="income h70"></i><i class="expense h42"></i><b>T5</b></div>
+            <div class="month"><i class="income h70"></i><i class="expense h56"></i><b>T6</b></div>
+            <div class="month"><i class="income h82"></i><i class="expense h62"></i><b>T7</b></div>
+            <div class="month"><i class="income h68"></i><i class="expense h55"></i><b>T8</b></div>
+            <div class="month"><i class="income h61"></i><i class="expense h48"></i><b>T9</b></div>
+          </div>
+        </article>
+
+        <article class="panel status-panel">
+          <div class="panel-head">
+            <h2>Trạng thái công trình</h2>
+          </div>
+          <div class="status-body">
+            <div class="donut"><span>12<small>Tổng công trình</small></span></div>
+            <ul>
+              <li><i class="dot blue"></i>Đang thi công <b>6</b></li>
+              <li><i class="dot green"></i>Hoàn thành <b>3</b></li>
+              <li><i class="dot yellow"></i>Tạm dừng <b>2</b></li>
+              <li><i class="dot red"></i>Chưa triển khai <b>1</b></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel watch-panel">
+          <div class="panel-head">
+            <h2>Công trình đáng chú ý</h2>
+            <button class="link-button" data-route="projects">Xem tất cả →</button>
+          </div>
+            <div class="watch-list" id="watchList">
+            <button data-project="Villa Đà Lạt"><span>Villa Đà Lạt</span><em class="ok">Đúng tiến độ</em><b>72%</b><i><u style="width:72%"></u></i></button>
+            <button data-project="Nhà phố Q.7"><span>Nhà phố Q.7</span><em class="bad">Chậm 4 ngày</em><b>55%</b><i><u style="width:55%"></u></i></button>
+            <button data-project="Resort Bảo Lộc"><span>Resort Bảo Lộc</span><em class="ok">Đúng tiến độ</em><b>36%</b><i><u style="width:36%"></u></i></button>
+            <button data-project="Nhà xưởng Đức Trọng"><span>Nhà xưởng Đức Trọng</span><em class="risk">Nguy cơ vượt ngân sách</em><b>88%</b><i class="danger"><u style="width:88%"></u></i></button>
+          </div>
+        </article>
+
+        <article class="panel activity-panel">
+          <div class="panel-head">
+            <h2>Hoạt động gần đây</h2>
+            <button class="link-button" data-route="reports">Xem tất cả →</button>
+          </div>
+          <ol class="activity-list">
+            <li><time>10:42</time><i class="camera">▣</i><span>Công trình Villa Đà Lạt<small>đã tải lên 6 ảnh hiện trường</small></span></li>
+            <li><time>10:31</time><i class="money">₫</i><span>Khách hàng Nguyễn Văn A<small>đã thanh toán 180 triệu</small></span></li>
+            <li><time>10:08</time><i class="file">▤</i><span>Báo giá #QT-028<small>đã được chấp nhận</small></span></li>
+            <li><time>09:45</time><i class="team">◎</i><span>Nhân viên Trần Minh<small>hoàn thành task đổ bê tông tầng 2</small></span></li>
+            <li><time>08:20</time><i class="alert">!</i><span>Cảnh báo: Vật tư thép<small>sắp hết còn 3 ngày</small></span></li>
+          </ol>
+        </article>
+
+        <article class="panel copilot-panel">
+          <div class="panel-head">
+            <h2>AI Copilot - Trợ lý doanh nghiệp</h2>
+            <b class="new-pill">Mới</b>
+          </div>
+          <div class="chat">
+            <p class="bubble user">Hôm nay có vấn đề gì cần lưu ý?</p>
+            <div class="bubble ai">
+              <div class="brief-header">
+                <span>Boss Brief · Ưu tiên hôm nay</span>
+                <strong>3 việc ảnh hưởng dòng tiền</strong>
+              </div>
+              <ol class="ai-risk-list">
+                <li>
+                  <b>1</b>
+                  <span>
+                    <strong>Nhà phố Q.7 chậm 4 ngày</strong>
+                    <small>Rủi ro trễ nghiệm thu thô · cần xác nhận vật tư trước 15:00</small>
+                  </span>
+                  <em>Ưu tiên cao</em>
+                </li>
+                <li>
+                  <b>2</b>
+                  <span>
+                    <strong>An Phát còn nợ 180 triệu</strong>
+                    <small>Đề xuất gửi nhắc thanh toán + lịch hẹn kế toán trong hôm nay</small>
+                  </span>
+                  <em>Thu tiền</em>
+                </li>
+                <li>
+                  <b>3</b>
+                  <span>
+                    <strong>Resort Bảo Lộc dùng 87% ngân sách</strong>
+                    <small>Khóa duyệt chi mới cho tới khi owner xem lại hạng mục phát sinh</small>
+                  </span>
+                  <em>Kiểm soát</em>
+                </li>
+              </ol>
+              <button class="ai-action" data-confirm="Tạo lịch xử lý 3 việc ưu tiên hôm nay?">Tạo kế hoạch xử lý 15 phút →</button>
+            </div>
+          </div>
+          <div class="ask-box">
+            <span>⌕</span>
+            <input id="aiInput" placeholder="Hỏi bất cứ điều gì về doanh nghiệp của bạn..." />
+            <button id="askAi">➜</button>
+          </div>
+        </article>
+
+        <article class="panel project-panel">
+          <div class="panel-head">
+            <h2>Dự án nổi bật</h2>
+          </div>
+          <div class="project-photo">
+            <button>‹</button>
+            <button>›</button>
+          </div>
+          <div class="project-title">
+            <strong>Villa Đà Lạt</strong>
+            <em>Đang thi công</em>
+          </div>
+          <div class="progress-line"><u style="width:72%"></u><b>72%</b></div>
+          <div class="project-stats">
+            <span><small>Ngày bắt đầu</small><b>01/06/2026</b></span>
+            <span><small>Dự kiến hoàn thành</small><b>30/11/2026</b></span>
+            <span><small>Ngân sách</small><b>12,5 tỷ</b></span>
+          </div>
+        </article>
+      </section>
+
+      <section class="module-view" id="moduleView" hidden>
+        <div class="module-head">
+          <div>
+            <span id="moduleEyebrow">MODULE</span>
+            <h2 id="moduleTitle">Công trình</h2>
+          </div>
+          <button class="small-action" id="backDashboard">← Tổng quan</button>
+        </div>
+        <div class="module-tools">
+          <label>
+            <span>⌕</span>
+            <input id="moduleSearch" placeholder="Lọc nhanh trong module..." />
+          </label>
+          <div class="segmented" id="moduleFilter">
+            <button class="active" data-filter="all">Tất cả</button>
+            <button data-filter="risk">Risk</button>
+            <button data-filter="watch">Watch</button>
+            <button data-filter="ok">OK</button>
+          </div>
+        </div>
+        <div class="module-grid" id="moduleGrid"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Điều hướng mobile">
+      <button class="active" data-route="dashboard">⌂<span>Tổng quan</span></button>
+      <button data-route="projects">▦<span>Công trình</span></button>
+      <button data-route="ai">✦<span>AI</span></button>
+      <button data-route="finance">₫<span>Thu chi</span></button>
+      <button data-route="schedule">▧<span>Lịch</span></button>
+    </nav>
+    <button class="fab" id="openQuick" aria-label="Tạo nhanh">＋</button>
+  </div>
+
+  <dialog id="commandDialog" class="command-dialog">
+    <form method="dialog">
+      <div class="command-input">
+        <i>⌕</i>
+        <input id="commandInput" placeholder="Tìm công trình, khách hàng, hóa đơn..." autocomplete="off" />
+        <button value="cancel">ESC</button>
+      </div>
+      <div class="command-results" id="commandResults"></div>
+    </form>
+  </dialog>
+
+  <dialog id="quickDialog" class="quick-dialog">
+    <form method="dialog">
+      <div class="panel-head">
+        <div>
+          <small>GHI NHANH</small>
+          <h2>Tạo việc ngay tại công trường</h2>
+        </div>
+        <button class="icon-close" value="cancel">×</button>
+      </div>
+      <div class="quick-grid">
+        <button type="button" data-quick="cost">₫<span>Ghi chi phí</span></button>
+        <button type="button" data-quick="payment">↓<span>Ghi thu</span></button>
+        <button type="button" data-quick="task">▧<span>Thêm việc</span></button>
+        <button type="button" data-quick="photo">▣<span>Tải ảnh</span></button>
+      </div>
+      <label>Nội dung<input id="quickTitle" placeholder="VD: Mua thép Hòa Phát cho Q.7" /></label>
+      <label>Công trình<select id="quickProject"><option>Villa Đà Lạt</option><option>Nhà phố Q.7</option><option>Resort Bảo Lộc</option><option>Nhà xưởng Đức Trọng</option></select></label>
+      <div class="quick-actions">
+        <button value="cancel">Hủy</button>
+        <button class="small-action" id="saveQuick" value="default">Lưu demo</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog" class="confirm-dialog">
+    <form method="dialog">
+      <small id="confirmEyebrow">ACTION</small>
+      <h2 id="confirmTitle">Xác nhận thao tác</h2>
+      <p id="confirmBody">Thao tác này sẽ được ghi vào activity feed demo.</p>
+      <div class="quick-actions">
+        <button value="cancel">Hủy</button>
+        <button class="small-action" id="confirmAction" value="default">Xác nhận</button>
+      </div>
+    </form>
+  </dialog>
+
+  <aside class="notify-panel" id="notifyPanel" aria-hidden="true">
+    <div class="drawer-card notify-card">
+      <div class="panel-head">
+        <div>
+          <small>LIVE ALERTS</small>
+          <h2>Thông báo cần xử lý</h2>
+        </div>
+        <button class="icon-close" id="closeNotifications">×</button>
+      </div>
+      <div class="notify-list">
+        <button data-route="finance"><b class="red">!</b><span>HD-023 quá hạn 12 ngày<small>Nhắc khách hàng An Phát</small></span></button>
+        <button data-route="projects"><b class="yellow">!</b><span>Nhà xưởng Đức Trọng đạt 88% ngân sách<small>Cần duyệt chi phí phát sinh</small></span></button>
+        <button data-route="schedule"><b class="green">✓</b><span>Villa Đà Lạt có 6 ảnh hiện trường mới<small>Kiểm tra trước 17:00</small></span></button>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="project-drawer" id="projectDrawer" aria-hidden="true">
+    <div class="drawer-card">
+      <div class="panel-head">
+        <div>
+          <small id="drawerCode">CT-001</small>
+          <h2 id="drawerTitle">Villa Đà Lạt</h2>
+        </div>
+        <button class="icon-close" id="closeDrawer">×</button>
+      </div>
+      <div class="drawer-summary">
+        <strong id="drawerProgress">72%</strong>
+        <span id="drawerStatus">Đúng tiến độ</span>
+      </div>
+      <div class="drawer-tabs">
+        <button class="active" data-tab="overview">Tổng quan</button>
+        <button data-tab="money">Tài chính</button>
+        <button data-tab="tasks">Công việc</button>
+      </div>
+      <div class="drawer-pane active" data-pane="overview">
+        <p>Đội thi công đang bám tiến độ. Hôm nay cần xác nhận ảnh hiện trường và lịch nghiệm thu tiếp theo.</p>
+        <ul>
+          <li>Chỉ huy trưởng: Trần Minh</li>
+          <li>Hạn bàn giao: 30/11/2026</li>
+          <li>Rủi ro: thời tiết và vật tư hoàn thiện</li>
+        </ul>
+      </div>
+      <div class="drawer-pane" data-pane="money">
+        <p>Đã thu 7,8 tỷ trên ngân sách 12,5 tỷ. Khoản thu tiếp theo cần nhắc trước ngày 20/09.</p>
+        <button class="small-action">Tạo nhắc thanh toán</button>
+      </div>
+      <div class="drawer-pane" data-pane="tasks">
+        <label><input type="checkbox" checked> Upload ảnh hiện trường buổi sáng</label>
+        <label><input type="checkbox"> Gọi xác nhận đội điện nước</label>
+        <label><input type="checkbox"> Chuẩn bị biên bản nghiệm thu</label>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">Đã cập nhật</div>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

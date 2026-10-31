@@ -1,0 +1,18 @@
+name: Static demo checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - run: node --check app.js
+      - run: node --check data.js
+      - run: node tests/check-sample.mjs
